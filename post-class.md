@@ -22,7 +22,7 @@ threshold = 30
 Answer:
 
 ```python
-df[(df > threshold)].dropna(how="all")
+df[(df > threshold).any(axis=1)]
 ```
 
 ### Question 2
@@ -55,7 +55,7 @@ df2 = pd.DataFrame({'A': [7, 8, 9], 'B': [10, 11, 12]})
 Answer:
 
 ```python
-pd.concat([df1, df2], axis=0)
+pd.concat([df1, df2], axis=0, ignore_index=True)
 ```
 
 ### Question 4
